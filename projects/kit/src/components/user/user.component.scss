@@ -1,0 +1,49 @@
+@use 'mixins';
+@use 'functions';
+
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.pupa-user {
+  @include mixins.flex-container(row, center);
+  gap: 1rem;
+
+  &__content {
+    @include mixins.flex-container(column);
+    @include mixins.full-width;
+
+    &-title {
+      @include mixins.flex-container(row, center);
+      gap: 1rem;
+
+      &_icon {
+        color: functions.semantic-color(icons-primary);
+      }
+
+      &_name {
+        @include mixins.font-preset-h6;
+        @include mixins.ellipsis-text-overflow;
+        color: functions.semantic-color(text-primary);
+      }
+    }
+
+    &-description {
+      @include mixins.flex-container(row, center);
+      gap: 1.5rem;
+
+      &_item {
+        @include mixins.font-preset-caption-xs;
+        @include mixins.ellipsis-text-overflow;
+        color: functions.semantic-color(text-secondary);
+      }
+    }
+  }
+}
+
+.divider {
+  height: 2rem;
+  align-self: center;
+}

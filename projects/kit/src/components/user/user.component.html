@@ -1,0 +1,25 @@
+<div class="pupa-user">
+  <pupa-avatar [size]="avatarSize$ | async"></pupa-avatar>
+
+  <div class="pupa-user__content" [pupaTooltip]="userTooltip$ | async" tooltipAppearance="truncate">
+    <div class="pupa-user__content-title">
+      <pupa-icon
+        class="pupa-user__content-title_icon"
+        *ngIf="fullNameIcon$ | async as iconName"
+        [name]="iconName"
+      ></pupa-icon>
+      <div class="pupa-user__content-title_name">
+        {{ fullName$ | async }}
+      </div>
+    </div>
+
+    <div class="pupa-user__content-description">
+      <ng-container *ngFor="let item of description$ | async; let last = last">
+        <span class="pupa-user__content-description_item">
+          {{ item }}
+        </span>
+        <pupa-divider *ngIf="!last" class="divider" orientation="vertical"></pupa-divider>
+      </ng-container>
+    </div>
+  </div>
+</div>

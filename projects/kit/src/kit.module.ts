@@ -30,6 +30,7 @@ import { PupaTagModule } from './components/tag/tag.module';
 import { PupaThemeWrapperModule } from './components/theme-wrapper/theme-wrapper.module';
 import { PupaTimerModule } from './components/timer/timer.module';
 import { PupaTooltipModule } from './components/tooltip/tooltip.module';
+import { PupaUserModule } from './components/user/user.module';
 
 const MODULES: Type<unknown>[] = [
   PupaSkeletonModule,
@@ -46,6 +47,7 @@ const MODULES: Type<unknown>[] = [
   PupaDropdownMenuModule,
   PupaAccordionModule,
   PupaAvatarModule,
+  PupaUserModule,
   PupaBadgeModule,
   PupaBreadcrumbsModule,
   PupaButtonGroupModule,

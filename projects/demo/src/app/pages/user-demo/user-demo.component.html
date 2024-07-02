@@ -1,0 +1,66 @@
+<h1>User</h1>
+
+<demo-page>
+  <div *demoPageTab="'overview'">
+    <h3 demoAnchor>User</h3>
+    <pupa-code-container [content]="example1Content">
+      <demo-user-example-1 *pupaCodeContainerPreviewTemplate></demo-user-example-1>
+    </pupa-code-container>
+  </div>
+
+  <div *demoPageTab="'api'">
+    <demo-example-viewer-content>
+      <pupa-user
+        [kind]="userSettingsForm.controls.kind.value"
+        [avatarSize]="sizeOptions$ | async"
+        [fullName]="userSettingsForm.controls.fullName.value"
+        [description]="userSettingsForm.controls.description.value.split(' ')"
+        [fullNameIcon]="userSettingsForm.controls.fullNameIcon.value"
+      ></pupa-user>
+    </demo-example-viewer-content>
+
+    <demo-example-viewer-section-label>Properties</demo-example-viewer-section-label>
+    <demo-example-viewer-section [formGroup]="userSettingsForm">
+      <demo-example-viewer-property decoratorName="input" name="kind" type="UserKind">
+        <ng-container *demoExampleViewerPropertyDescription>The string to display inside the element.</ng-container>
+        <pupa-input-text [formControl]="userSettingsForm.controls.kind"></pupa-input-text>
+      </demo-example-viewer-property>
+
+      <demo-example-viewer-property decoratorName="input" name="avatarSize" type="AvatarSize">
+        <ng-container *demoExampleViewerPropertyDescription>
+          The name of the icon displayed inside the element.
+        </ng-container>
+        <demo-props-radio-select #sizeOptions$ [options]="avatarSizes"></demo-props-radio-select>
+      </demo-example-viewer-property>
+
+      <demo-example-viewer-property decoratorName="input" name="fullName" type="string">
+        <ng-container *demoExampleViewerPropertyDescription>
+          The source of the image displayed inside the element.
+        </ng-container>
+        <pupa-input-text [formControl]="userSettingsForm.controls.fullName"></pupa-input-text>
+      </demo-example-viewer-property>
+
+      <demo-example-viewer-property decoratorName="input" name="fullNameIcon" type="string">
+        <ng-container *demoExampleViewerPropertyDescription>
+          The source of the image displayed inside the element.
+        </ng-container>
+        <pupa-input-text [formControl]="userSettingsForm.controls.fullNameIcon"></pupa-input-text>
+      </demo-example-viewer-property>
+
+      <demo-example-viewer-property decoratorName="input" name="description" type="string">
+        <ng-container *demoExampleViewerPropertyDescription>Element background seed.</ng-container>
+        <pupa-input-text [formControl]="userSettingsForm.controls.description"></pupa-input-text>
+      </demo-example-viewer-property>
+
+      <demo-example-viewer-property decoratorName="input" name="avatarSize" type="AvatarSize">
+        <ng-container *demoExampleViewerPropertyDescription>Adjusts the size of the element.</ng-container>
+        <demo-props-radio-select #sizeOptions$ [options]="sizeOptions"></demo-props-radio-select>
+      </demo-example-viewer-property>
+
+      <demo-example-viewer-property decoratorName="input" name="disabled" type="boolean">
+        <ng-container *demoExampleViewerPropertyDescription>Whether the element is disabled.</ng-container>
+        <demo-props-switcher #disabled$></demo-props-switcher>
+      </demo-example-viewer-property>
+    </demo-example-viewer-section>
+  </div>
+</demo-page>

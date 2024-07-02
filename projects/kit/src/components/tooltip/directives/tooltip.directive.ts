@@ -144,6 +144,8 @@ export class PupaTooltipDirective implements OnChanges, OnDestroy, AfterViewInit
     const textTruncatedByWidth: boolean = element.scrollWidth > element.clientWidth;
     const textTruncatedByHeight: boolean = element.scrollHeight > element.clientHeight;
 
+    console.log({ element, textTruncatedByWidth, textTruncatedByHeight });
+
     return textTruncatedByWidth || textTruncatedByHeight;
   }
 

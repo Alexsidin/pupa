@@ -48,6 +48,7 @@ export class SidebarComponent {
         { title: 'Dropdown', link: '/kit/dropdown' },
         { title: 'Dropdown menu', link: '/kit/dropdown-menu' },
         { title: 'Avatar', link: '/kit/avatar' },
+        { title: 'User', link: '/kit/user' },
         { title: 'Section', link: '/kit/section' },
         { title: 'Card', link: '/kit/card' },
         { title: 'Tag', link: '/kit/tag' },
