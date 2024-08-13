@@ -63,6 +63,7 @@ import { TooltipDemoModule } from './pages/tooltip-demo/tooltip-demo.module';
 import { TreeNewDemoModule } from './pages/tree-new-demo/tree-new-demo.module';
 import { TreeNodeDemoModule } from './pages/tree-node-demo/tree-node-demo.module';
 import { TypographyPageModule } from './pages/typography-page/typography-page.module';
+import { UserDemoModule } from './pages/user-demo/user-demo.module';
 
 const demoRoutes: Routes = [
   {
@@ -93,6 +94,11 @@ const demoRoutes: Routes = [
         path: 'avatar',
         loadChildren: (): Promise<Type<AvatarDemoModule>> =>
           import('./pages/avatar-demo/avatar-demo.module').then((module: any) => module.AvatarDemoModule),
+      },
+      {
+        path: 'user',
+        loadChildren: (): Promise<Type<UserDemoModule>> =>
+          import('./pages/user-demo/user-demo.module').then((module: any) => module.UserDemoModule),
       },
       {
         path: 'colors',
