@@ -40,7 +40,6 @@ export class PopoversService {
     const popoverRef: PopoverRef<PopoverDataType<TComponent>, PopoverReturnType<TComponent>> = popover.open(isExists);
 
     this.addCssClassToPopoverTrigger(config.trigger);
-    this.portalLayersService.moveToTopById(popover.id);
 
     popoverRef.closed$.subscribe(() => {
       this.removeCssClassFromPopoverTrigger(config.trigger);
